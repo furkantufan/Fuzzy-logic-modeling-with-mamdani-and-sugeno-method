@@ -1,0 +1,57 @@
+[System]
+Name='mamdani_Fuzzyy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='buyukluk'
+Range=[0 40]
+NumMFs=5
+MF1='cokKucuk':'trapmf',[0 0 10 25]
+MF2='kucuk':'trimf',[15 20 25]
+MF3='orta':'trimf',[20 25 30]
+MF4='iyi':'trimf',[25 30 35]
+MF5='buyuk':'trapmf',[30 35 40 40]
+
+[Input2]
+Name='tazelik'
+Range=[0 20]
+NumMFs=3
+MF1='curuk':'trapmf',[0 0 6 8]
+MF2='orta_tazelik':'trimf',[5 10 15]
+MF3='taze':'trapmf',[12 15 20 20]
+
+[Output1]
+Name='kalite'
+Range=[0 100]
+NumMFs=5
+MF1='cokKotu':'trapmf',[0 0 10 20]
+MF2='kotu':'trimf',[10 25 40]
+MF3='orta':'trimf',[30 45 60]
+MF4='iyi':'trimf',[50 65 80]
+MF5='Cokiyi':'trapmf',[75 90 100 100]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 3 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 2 (1) : 1
+3 2, 3 (1) : 1
+3 3, 4 (1) : 1
+4 1, 2 (1) : 1
+4 2, 3 (1) : 1
+4 3, 5 (1) : 1
+5 1, 3 (1) : 1
+5 2, 5 (1) : 1
+5 3, 5 (1) : 1
